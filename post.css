@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background: #ffffff;
+    
+
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: start;
+}
+
+.lateral {
+    width: 250px;
+    background: #ffffff;
+    color: rgb(76, 7, 97);
+    height: 100%;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: solid 1px rgb(76, 7, 97); ;
+}
+
+.lateral .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lateral nav ul {
+    list-style: none;
+    /* padding: 13; */
+}
+
+.lateral nav ul li {
+    margin: 20px 0;
+}
+
+.lateral nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex;
+    padding: 7px;
+    align-items: center;
+}
+
+.lateral nav ul li img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    background: #6d2fb8;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.botao img {
+    width: 20px;
+    margin-right: 10px;
+}
+/* main{
+    background-color: #6d2fb8;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    
+} */
+
+
+.user--post img{
+    position: absolute;
+    left: 380px;
+    width: 60px;
+    height: 60px;
+    bottom: 520px;
+
+}
+.user--post h2{
+    position: relative;
+    width: 500px;
+    left: 80px;
+    bottom: 50px;
+    margin-top: 1px;  
+}
+.user--post p{
+    position: relative;
+    width: 200px;
+    left: 80px;
+    bottom: 50px;
+    margin-top: 1px; 
+}
+
+.container--pub img{
+    width: 50%;
+    height: 70%;
+    padding-left: 80px;
+}
+
+.profile {
+    flex: 1;
+    text-align: center;
+    padding: 0px;
+    background: #e6e6e6;
+    height: 100%;
+}
+
+.profile header {
+    background: #e6e6e6;
+    padding:10px;
+    bottom: 200px;
+    /* border-radius: 10px; */
+
+}
+.profile h2{
+    font-family: "Jockey One", sans-serif;
+    font-size: 70px;
+    color: rgb(76, 7, 97);
+}
+
+.stats h3, h1{
+    font-family: "Jockey One", sans-serif;
+    color:rgb(76, 7, 97);
+}
+.stats h3{
+    display: flex;
+    /* padding-bottom: 200px; */
+}
+
+.profile-ft img {
+    width: 100px;
+    /* border-radius: 50%; */
+    padding-top: 0px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.username {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.fotos {
+    display: flex;
+    /* justify-content: space-between; */
+    /* margin-top: 30px; */
+    /* width: 200px;
+    height: 300px; */
+}
+
+.image-card img {
+    width: 350px;
+    height: 225px;
+    margin: 0px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 30px;
+}
+
+.container--post {
+    border: solid 1px rgb(0, 0, 0);
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+/* Responsividade */
+@media screen {
+    
+}
