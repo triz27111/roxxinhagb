@@ -1,49 +1,80 @@
 'use strict'
 
-// Exemplo de dados dos posts
-const posts = [
-    {
-      usuario: "Usuario_123",
-      local: "Manaus - Amazonas",
-      imagemPerfil: "img/perfil_usuario.png",
-      imagemPost: "img/Sunset_in_Manaus.jpg",
-      descricao: "Entre cores e luzes, o sol se despede e a noite chega para nos lembrar que sempre há beleza em cada fim.",
-      hashtags: ["#PôrDoSol", "#FimDeTarde", "#BelezaNatural"]
-    },
-    {
-        
-    }
-  ]
-  
-  // Função para criar os posts
-  function carregarPosts() {
-    const container = document.querySelector(".main-content");
-  
-    posts.forEach(post => {
-      const postHTML = `
-        <div class="post">
-          <div class="post-user">
-            <img src="${post.imagemPerfil}" alt="Perfil" />
-            <div class="post-user-info">
-              <h1>${post.usuario}</h1>
-              <p>${post.local}</p>
-            </div>
-          </div>
-          <img src="${post.imagemPost}" alt="Imagem do Post" class="post-image" />
-          <div class="post-icons">
-            <img src="img/curtidas.png" alt="Curtir" width="24" />
-            <img src="img/comentarios.png" alt="Comentar" width="24" />
-          </div>
-          <p class="post-description">
-            <h1>${post.usuario}</h1>
-            ${post.descricao}<br>
-            <span class="hashtags">${post.hashtags.join(" ")}</span>
-          </p>
-        </div>
-      `;
-      container.innerHTML += postHTML;
-    });
-  }
-  
-carregarPosts()
-  
+const feedPost = async () => {
+
+  const url = "https://back-spider.vercel.app/publicacoes/listarPublicacoes"
+
+  const response = await fetch(url)
+
+  const data = await response.json()
+
+  const mainContent = document.getElementById('main-content')
+
+  data.forEach(async (post) => {
+
+    const dataUser = await fetch(`https://back-spider.vercel.app/user/pesquisarUser/${post.idUsuario}`)
+
+    const user = await dataUser.json()
+
+    const container = document.createElement('div')
+    container.className = "post"
+
+    const postUser = document.createElement('div')
+    postUser.className = "post-user"
+
+    const imgUser = document.createElement('img')
+    imgUser.className = "Perfil"
+    imgUser.setAttribute("scr", user.imagemPerfil)
+
+    const imgPost = document.createElement('img')
+    imgPost.className = "post-image"
+    imgPost.setAttribute("scr", post.imagem)
+
+
+    const nome = document.createElement('span')
+    nome.className = "username"
+    nome.textContent = user.nome
+
+    const location = document.createElement('p')
+    location.textContent = "Senai Jandira"
+
+    const containerFooter = document.createElement('div')
+    containerFooter.className = 'Curtir'
+
+    const containerIcons = document.createElement('div')
+    containerIcons.className = "post-icons"
+
+    const comment = document.createElement('img')
+    comment.src = './img/comentarios.png'
+
+    const like = document.createElement('img')
+    like.src = './img/curtidas.png'
+
+    const containerDescription = document.createElement('div')
+    containerDescription.className = "post-description"
+
+    const descripition = document.createElement('span')
+    descripition.textContent = post.descripition
+
+    postUser.appendChild(imgUser)
+    postUser.appendChild(nome)
+    postUser.appendChild(location)
+
+    containerIcons.appendChild(comment)
+    containerIcons.appendChild(like)
+
+    containerDescription.appendChild(nome)
+    containerDescription.appendChild(descripition)
+
+    container.appendChild(postUser)
+    container.appendChild(imgPost)
+    container.appendChild(containerIcons)
+    container.appendChild(containerDescription)
+
+    mainContent.appendChild(container)
+
+  });
+
+}
+
+feedPost()

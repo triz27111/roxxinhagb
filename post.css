@@ -29,7 +29,7 @@ body {
     border-right: 1px solid #ccc;
     padding: 13px;
     display: flex;
-    position: fixedx;
+    position: fixed;
     overflow-y: auto;
     flex-direction: column;
     justify-content: space-between;
@@ -97,6 +97,7 @@ body {
     width: 70%;
     margin-bottom: 30px;
     width: calc(100% - 250px);
+    border: solid solid 3px red;
   }
   
   .post-user {
@@ -107,8 +108,8 @@ body {
   }
   
   .post-user img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 600px;
     border-radius: 50%;
   }
   
@@ -117,7 +118,7 @@ body {
     flex-direction: column;
   }
   
-  .post-user-info h1 {
+  .post-user-info span {
     font-size: 16px;
     font-weight: bold;
   }
