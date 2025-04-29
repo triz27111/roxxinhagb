@@ -24,11 +24,11 @@ const feedPost = async () => {
 
     const imgUser = document.createElement('img')
     imgUser.className = "Perfil"
-    imgUser.setAttribute("scr", user.imagemPerfil)
+    imgUser.setAttribute("src", user.imagemPerfil)
 
     const imgPost = document.createElement('img')
     imgPost.className = "post-image"
-    imgPost.setAttribute("scr", post.imagem)
+    imgPost.setAttribute("src", post.imagem)
 
 
     const nome = document.createElement('span')
@@ -39,6 +39,7 @@ const feedPost = async () => {
     location.textContent = "Senai Jandira"
 
     const containerFooter = document.createElement('div')
+    
     containerFooter.className = 'Curtir'
 
     const containerIcons = document.createElement('div')
@@ -70,6 +71,7 @@ const feedPost = async () => {
     container.appendChild(imgPost)
     container.appendChild(containerIcons)
     container.appendChild(containerDescription)
+    
 
     mainContent.appendChild(container)
 
